@@ -1,10 +1,35 @@
-import tensorflow as tf
-import numpy as np
-import matplotlib.pyplot as plt
-import urllib.request
-from PIL import Image
-import requests
-from io import BytesIO
+
+import subprocess
+import sys
+
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+# Example usage:
+try:
+    import tensorflow as tf
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import requests
+    from PIL import Image
+    from io import BytesIO
+    import urlib.request 
+except ImportError:
+    print("Some libraries not found. Installing dependencies...")
+    install('tensorflow')
+    install('numpy')
+    install('matplotlib')
+    install('Pillow')
+    install('io')
+    install('requests')
+    install('urlib')
+    from PIL import Image
+    from io import BytesIO
+    import tensorflow as tf
+    import matplotlib.pyplot as plt
+    import urlib.request
+    import requests 
+    import numpy as np
 
 # Load the MNIST dataset
 mnist = tf.keras.datasets.mnist
